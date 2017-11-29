@@ -1,11 +1,12 @@
 {
-  "name": "sandbox",
+  "name": "aiedu-sandbox",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.js",
   "repository": "git@github.com:aiedu/sandbox.git",
   "author": "mujie.zzl <mujie.zzl@alibaba-inc.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^8.0.53"
+    "@types/node": "^8.0.53",
+    "assert": "^1.4.1"
   }
 }

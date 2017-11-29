@@ -1,5 +1,6 @@
 const vm = require("vm");
 const util = require("util");
+const assert = require("assert");
 const Core = require("./core");
 
 module.exports = class Javascript extends Core { 
@@ -13,16 +14,13 @@ module.exports = class Javascript extends Core {
     }   
     exec ( code ){
         let t0 = +new Date();
-
-        let r = this.compile( code ).runInNewContext({
-            console: global.console
+        this.compile( code ).runInNewContext({
+            assert: assert
         }, {
-            timeout: 1000
+            timeout: 2000
         });
-
         return {
-            time: +new Date() - t0,
-            result: r
+            time: +new Date() - t0
         }
     }
     run ( code ){
