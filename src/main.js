@@ -8,7 +8,7 @@ module.exports = {
             try {
                 switch( language ){
                     case LangEnum.Javascript: {
-                        var l = new Javascript({
+                        var javascript = new Javascript({
                             version: options.version || 'ES2015'
                         });
                         //获取全部测试用例
@@ -27,7 +27,7 @@ module.exports = {
                         for( let i = 0; i < casesLength; i++ ){
                             let runCode = code + ';' + cases[ i ];
                             try {
-                                let r = l.run( runCode );
+                                let r = javascript.run( runCode );
                                 timeCosts += r.time;
                                 pass++;
                             } catch ( e ){
@@ -45,6 +45,9 @@ module.exports = {
                         });
                         break;
                     }
+                    case LangEnum.HTML: {
+                        break;
+                    }
                     case LangEnum.Java: {
                         break;
                     }
@@ -53,7 +56,7 @@ module.exports = {
                     }
                     case LangEnum.Python: {
                         break;
-                    }
+                    }   
                     default: {
                         reject({ message: 'not support the language:' + language });
                     }

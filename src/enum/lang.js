@@ -2,5 +2,6 @@ module.exports = {
     C: "c",
     Java: "java",
     Javascript: "javascript",
-    Python: "python"
+    Python: "python",
+    HTML: "html"
 };
